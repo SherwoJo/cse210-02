@@ -4,12 +4,7 @@ namespace cse210_02
 {
     public class Player
     {
-        private int score;
-        public int Score
-        { 
-            get {return score;}
-            set {score = 300;}
-        }
+        public int Score { get; set; } = 300;
 
         public string makeGuess()
         {

@@ -12,6 +12,7 @@ namespace cse210_02
             bool gameOver = false;
             Console.Write("Would you like to see the first card (y/n)? ");
             string response = Console.ReadLine();
+            Console.WriteLine("");
 
             // See if the player wants to play.
             gameOver = detectGameOver(response);
@@ -32,6 +33,7 @@ namespace cse210_02
 
                 // Draw the next card and display it to the user.
                 int nextCard = Deck.drawCard();
+                Console.WriteLine($"Next card was: {nextCard}");
 
                 // Check if the player's guess was correct and award points.
                 int pointsAwarded = awardPoints(firstCard, nextCard, guess);
@@ -88,13 +90,11 @@ namespace cse210_02
         {
             int pointsAwarded = 0;
 
-            if(nextCard > firstCard && guess == "h" ||
-            nextCard < firstCard && guess == "l")
+            if(nextCard > firstCard && guess == "h" || nextCard < firstCard && guess == "l")
             {
                 pointsAwarded = 100;
             }
-            else if(nextCard > firstCard && guess == "l" ||
-            nextCard < firstCard && guess == "h")
+            else if(nextCard > firstCard && guess == "l" || nextCard < firstCard && guess == "h")
             {
                 pointsAwarded = -75;
             }
